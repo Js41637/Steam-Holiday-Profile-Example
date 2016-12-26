@@ -1,0 +1,1028 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <style>
+    a, .whiteLink {
+      color: #ebebeb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .profile_customization {
+      width: 617px;
+      position: relative;
+      background-image: url(http://steamcommunity-a.akamaihd.net/public/images/profile/showcase_bg.png);
+      background-position: top left;
+      background-repeat: no-repeat;
+      background-color: #141414;
+      border-radius: 3px;
+      padding: 0 10px 11px 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      overflow: hidden;
+      float: left;
+      margin-right: 70px;
+    }
+    .profile_customization_header {
+      font-family: "Motiva Sans", Sans-serif;
+      font-weight: 200;
+      color: #5491cf;
+      font-size: 20px;
+      line-height: 30px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .showcase_badges_icons {
+      margin-bottom: 9px;
+    }
+    .showcase_slot {
+      display: block;
+      float: left;
+      position: relative;
+    }
+    .showcase_badges_icons .showcase_badge {
+      float: left;
+      position: relative;
+      margin-left: 26px;
+    }
+    .showcase_badges_icons .showcase_badge, .showcase_badges_icons .showcase_badge img {
+      width: 80px;
+      height: 80px;
+    }
+    .showcase_badges_icons .showcase_badge:first-child, html.responsive .showcase_badges_icons .showcase_badge:first-child {
+      margin-left: 0;
+    }
+    .showcase_content_bg {
+      background-color: #101214;
+      background-color: rgba( 0, 0, 0, 0.3 );
+      padding: 8px;
+      border-radius: 3px;
+      margin-bottom: 9px;
+      overflow: hidden;
+    }
+    .showcase_stats_row {
+      white-space: nowrap;
+    }
+    .showcase_content_bg:last-child {
+      margin-bottom: 0;
+    }
+    .showcase_stats_row .showcase_stat:first-child, html.responsive .showcase_stats_row .showcase_stat:first-child {
+      margin-left: 0;
+    }
+    .showcase_stats_row .showcase_stat {
+      margin-left: 42px;
+      display: inline-block;
+    }
+    .showcase_stat {
+      font-size: 34px;
+      font-family: "Motiva Sans", Sans-serif;
+    }
+    .showcase_stat .value {
+      font-size: 1em;
+      font-weight: 200;
+      color: #ffffff;
+    }
+    .showcase_stat .label {
+      font-size: 0.5em;
+      color: #9b9b9b;
+    }
+    a.showcase_stat:hover .label {
+      color: #ffffff;
+    }
+
+
+    .holidayprofile .profile_customization:not(.none_selected) {
+      background: url(https://steamcommunity-a.akamaihd.net/public/images/profile/holidayprofile/showcase_repeat.png) repeat-y center -6px;
+      overflow: visible;
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+    .holidayprofile .profile_customization:not(.none_selected)::before {
+      content: '';
+      background: url(https://steamcommunity-a.akamaihd.net/public/images/profile/holidayprofile/showcase_top.png) no-repeat center top;
+      width: 664px;
+      height: 85px;
+      position: absolute;
+      z-index: 0;
+      left: -15px;
+      top: -10px;
+      display: block;
+    }
+    .holidayprofile .profile_customization:not(.none_selected) .profile_customization_header {
+      position: relative;
+      text-shadow: 1px 1px 2px #000000;
+      margin-bottom: 40px;
+      color: #e4ca63;
+    }
+
+    .holidayprofile .profile_customization:not(.none_selected)::after {
+      content: '';
+      background: url(https://steamcommunity-a.akamaihd.net/public/images/profile/holidayprofile/showcase_bottom.png) no-repeat center bottom;
+      width: 664px;
+      height: 85px;
+      position: absolute;
+      left: -15px;
+      display: block;
+    }
+    .holidayprofile_animation {
+      position: absolute;
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="holidayprofile">
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <div class="profile_customization">
+  	<div class="profile_customization_header">Badge Collector</div>
+  	<div class="profile_customization_block">
+  		<div class="badge_showcase">
+  			<div class="showcase_badges_icons">
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/425280">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/425280/760865fbf5173407bea9ce761502a645beda80b8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590?border=1">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/628b01f621dbef0a75625d2e04dfea817e7c0548.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/335590">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/335590/579eb24e1be7f43a186a28fe8e0e8efebe135761.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/gamecards/267420">
+  						<img src="http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/267420/fe3428359524171a2debfe9ce47402e81e936fc8.png" class="badge_icon">
+  					</a>
+  				</div>
+  				<div class="showcase_slot showcase_badge">
+  					<a href="http://steamcommunity.com/id/js41637/badges/8">
+  						<img src="http://steamcommunity-a.akamaihd.net/public/images/badges/08_winter2012/winter2012_badge80.png" class="badge_icon">
+  		      </a>
+  				</div>
+  					<div class="showcase_slot showcase_badge">
+  						<a href="http://steamcommunity.com/id/js41637/badges/6">
+  						  <img src="http://steamcommunity-a.akamaihd.net/public/images/badges/06_winter2011/coal02_80.png" class="badge_icon">
+  						</a>
+  				</div>
+  				<div style="clear: left;"></div>
+  			</div>
+
+  			<div class="showcase_content_bg showcase_stats_row">
+  				<a class="showcase_stat" href="http://steamcommunity.com/id/js41637/badges/">
+  					<div class="value">197</div>
+  					<div class="label">Badges Earned</div>
+  				</a>
+  			  <a class="showcase_stat" href="http://steamcommunity.com/id/js41637/inventory/#753_6">
+  					<div class="value">173</div>
+  					<div class="label">Game Cards</div>
+  				</a>
+  				<div style="clear: left;"></div>
+  			</div>
+  		</div>
+  		<div style="clear: both"></div>
+  	</div>
+  </div>
+  <script>
+    var g_rgAnimationDefaults = {
+      height: 130,
+      width: 130,
+      fps: 30
+    };
+
+    var g_rgAnimations = [
+      {
+        image: 'http://i.imgur.com/2Oi88Ub.png',
+        cols: 9,
+        frames: 69
+      },
+      {
+        image: 'http://i.imgur.com/q0eKMjl.png',
+        cols: 5,
+        frames: 25
+      },
+      {
+        image: 'http://i.imgur.com/m8oUitA.png',
+        cols: 9,
+        frames: 78
+      },
+      {
+        image: 'http://i.imgur.com/pfzX2C7.png',
+        cols: 8,
+        frames: 60
+      },
+      {
+        image: 'http://i.imgur.com/22dqCa6.png',
+        cols: 5,
+        frames: 25
+      },
+      {
+        image: 'http://i.imgur.com/omTQxEE.png',
+        cols: 8,
+        frames: 54
+      },
+      {
+        image: 'http://i.imgur.com/5i2OvoX.png',
+        cols: 8,
+        frames: 62
+      },
+      {
+        image: 'http://i.imgur.com/rmRYkt8.png',
+        cols: 8,
+        frames: 57
+      },
+      {
+        image: 'http://i.imgur.com/f43GX1y.png',
+        cols: 9,
+        frames: 72
+      },
+      {
+        image: 'http://i.imgur.com/ItiA4y6.png',
+        cols: 9,
+        frames: 79
+      },
+      {
+        image: 'http://i.imgur.com/kiJlFYb.png',
+        cols: 9,
+        frames: 68
+      },
+      {
+        image: 'http://i.imgur.com/MpLMSUY.png',
+        cols: 8,
+        frames: 59
+      },
+      {
+        image: 'http://i.imgur.com/0wgiss6.png',
+        cols: 7,
+        frames: 46
+      },
+      {
+        image: 'http://i.imgur.com/Zu8apZk.png',
+        cols: 7,
+        frames: 45
+      }
+    ];
+
+    ANIMATION_TICK_RATE = 11;
+
+    CAnimation = function(rgAnimation, $Parent, x, y)
+    {
+      this.m_rgAnimation = $.extend({}, g_rgAnimationDefaults, rgAnimation);
+      this.m_x = x;
+      this.m_y = y;
+
+      this.m_$Element = $('<div/>', {'class': 'holidayprofile_animation'});
+      this.m_$Element.css( 'height', this.m_rgAnimation.height + 'px' );
+      this.m_$Element.css( 'width', this.m_rgAnimation.width + 'px' );
+      this.m_$Element.css( 'background', 'url( \'' + this.m_rgAnimation.image + '\') no-repeat');
+      this.m_$Element.appendTo( $Parent );
+      this.m_$Element.offset( {left: x, top: y } );
+      this.m_$Element.show();
+
+      this.m_frame = 0;
+      this.m_start = 0;
+      this.m_rate = 1000 / this.m_rgAnimation.fps;
+
+      this.m_interval = 0;
+    };
+
+    CAnimation.sm_cAnimationsRunning = 0;
+
+    CAnimation.prototype.Start = function() {
+      this.m_start = $.now();
+      this.m_interval = window.setInterval( $.proxy( this.Tick, this ), ANIMATION_TICK_RATE );
+      CAnimation.sm_cAnimationsRunning++;
+    };
+
+    CAnimation.prototype.Tick = function () {
+      var sElapsed = $.now() - this.m_start;
+      var iCurFrame = Math.floor( sElapsed / this.m_rate );
+      if ( iCurFrame != this.m_frame )
+      {
+        this.m_frame = iCurFrame;
+        if ( this.m_frame <= this.m_rgAnimation.frames )
+        {
+          var nBackgroundX = ( this.m_frame % this.m_rgAnimation.cols ) * this.m_rgAnimation.width;
+          var nBackgroundY = Math.floor( this.m_frame / this.m_rgAnimation.cols ) * this.m_rgAnimation.height;
+          this.m_$Element.css( 'background-position', '-' + nBackgroundX + 'px -' + nBackgroundY + 'px' );
+        }
+        else
+        {
+          setTimeout(() => {
+            this.Start();
+          }, 500);
+        }
+      }
+    };
+
+    function StartAnimation() {
+      document.querySelectorAll('.profile_customization').forEach((thing, i) => {
+        AnimationForShowcase($(thing), i);
+      })
+    }
+
+    function AnimationForShowcase($Showcase, i) {
+      var nAnimation = Math.floor( Math.random() * g_rgAnimations.length );
+      var pos = $Showcase.offset();
+      var xpad = 100;
+      var x = Math.floor(Math.random() * ($Showcase.width() - 2 * xpad)) + (xpad / 2);
+      var Animation = new CAnimation(g_rgAnimations[i], $Showcase, pos.left + x, pos.top - 120);
+      Animation.Start();
+    }
+
+    // Start the animations
+    StartAnimation();
+  </script>
+</body>
+</html>
